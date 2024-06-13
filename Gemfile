@@ -29,7 +29,8 @@ gem "jbuilder", '2.12.0'
 gem 'rubocop', '1.64.1'
 gem 'rubocop-rails', '2.25.0'
 gem 'dotenv-rails', '3.1.2'
-
+gem 'net-pop', '0.1.2'
+gem 'net-protocol', '~> 0.1' # Specify the version constraint if known
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
