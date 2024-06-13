@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - my_app:/var/lib/postgresql/data
+    networks:
+      - my_network
+
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@db:5432/myapp_development
+      RAILS_ENV: ${RAILS_ENV}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    networks:
+      - my_network
+
+volumes:
+  my_app:
+
+networks:
+  my_network:
