@@ -28,6 +28,7 @@ gem "jbuilder"
 
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'dotenv-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
