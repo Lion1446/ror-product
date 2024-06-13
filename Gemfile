@@ -6,7 +6,7 @@ ruby "3.3.3"
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem 'sprockets-rails', '3.5.1'
 
 # Use pg as the database for Active Record
 gem "pg", "~> 1.1"
@@ -15,20 +15,22 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+gem "importmap-rails", '2.0.1'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem "turbo-rails", '1.3.3'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+gem "jbuilder", '2.12.0'
 
-gem 'rubocop'
-gem 'rubocop-rails'
-gem 'dotenv-rails'
+gem 'rubocop', '1.64.1'
+gem 'rubocop-rails', '2.25.0'
+gem 'dotenv-rails', '3.1.2'
+gem 'net-protocol'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
