@@ -1,21 +1,20 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: test_app
+    databaseName: test_app
+    user: test_app
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: my_app
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec rails server"
+    startCommand: "bundle exec rails s"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: test_app
           property: connectionString
       - key: RAILS_MASTER_KEY
-        sync:false- key: WEB_CONCURRENCY
-        value: 2
+        sync: false
